@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #b8ee23, #6610f2);
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            top: 80;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background:linear-gradient(45deg, #d6ff65, #3c0257) ;
+            border-radius: 90px;
+            transform: scale(0.1);
+        }
+
+        /* About Section */
+        #about {
+            background: #0000005d;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        #about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 230, 0);
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        #about img:hover {
+            transform: scale(1.2);
+        }
+
+        #about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 3rem 1rem;
+            background: #d4d2d2;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 7fr));
+            gap: 1.5rem;
+        }
+
+        .project {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(1, 11, 1, .1);
+            transition: transform 0.2s, box-shadow 0.1s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px) translateX(-10px) rotate(5deg);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(45deg, #f10303, #d9ff00);
+            color: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact a {
+            color: #ffdd57;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        #contact a:hover {
+            color: #3c00c9;
+        }
+
+        /* Feedback Form */
+        #feedback {
+            background: #f9f9f9;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        #feedback h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: hsla(175, 100%, 81%, 0);
+            padding: 2rem ;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(27, 19, 19, 0.1);
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #3d01e2;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background:  linear-gradient(45deg, #d6ff65, #ee4b0b);
+            color: #030303;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <img src="images (2).jfif" alt="Your Picture">
+            <h2>About Me</h2>
+            <p>Hello! I'm <strong>DEV</strong>, a creative and dedicated <em>coder</em>. I specialize in building engaging user experiences and delivering exceptional results.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="Personal Portfolio">
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive and modern portfolio website to showcase my skills, projects, and contact information.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="Interactive Quiz App">
+                    <h3>Interactive Quiz App</h3>
+                    <p>A fun and educational quiz app built with HTML, CSS, and JavaScript to enhance learning.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="Landing Page Design">
+                    <h3>Landing Page Design</h3>
+                    <p>A clean and user-friendly landing page designed for a fictional product or service.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="Responsive Restaurant Menu">
+                    <h3>Responsive Restaurant Menu</h3>
+                    <p>A dynamic and mobile-friendly restaurant menu created using HTML and CSS.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="HTML5 Canvas Drawing App">
+                    <h3>HTML5 Canvas Drawing App</h3>
+                    <p>A simple drawing application using the HTML5 Canvas API, allowing users to sketch and save images.</p>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300" alt="Blog Template">
+                    <h3>Blog Template</h3>
+                    <p>A minimalist blog template with a clean layout and optimized for readability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out via email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </div>
+    </section>
+
+    <section id="feedback" class="fade-in">
+        <div class="container">
+            <h2>Feedback Form</h2>
+            <form id="feedbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Feedback" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <p id="feedbackMessage" style="display: none; color: green; margin-top: 1rem;">Thank you for your feedback!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DEV. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = event.target.name.value;
+            const email = event.target.email.value;
+            const message = event.target.message.value;
+
+            // Log data to console
+            console.log('Feedback Submitted:', { name, email, message });
+
+            // Show success message
+            document.getElementById('feedbackMessage').style.display = 'block';
+            event.target.reset(); // Clear the form
+        });
+    </script>
+</body>
+</html>
